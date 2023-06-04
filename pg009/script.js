@@ -8,29 +8,25 @@ function checkValidEmail(mail) {
     }
 
     if (char === ".com") {
-      if (mail[mail.length - 5] !== ".") {
-        validity = true;
+      if (
+        mail[mail.length - 5].charCodeAt(0) < 65 ||
+        mail[mail.length - 5].charCodeAt(0) > 122
+      ) {
+        return false;
       }
-    //   debugger
-      for (let i = 0; i < mail.length; i++) {
-        if (mail[i] === "@" && mail[mail.length - 1] !== "@") {
-            if(mail[i - 1] !== '.' && mail[i + 1] !== '.'){
-                validity = true;
-            } else {
-                validity = false
-            }
-          break
-        } else {
-          validity = false;
+      for (let i = 0; i < mail.length - 4; i++) {
+            if (mail[i] === "@") {
+          if (mail[i - 1] === "." || mail[i + 1] === "." || (mail[i - 1] === '@' || mail[i + 1] === '@')) {
+            return false;
+          }
         }
       }
-    } else {
-      validity = false;
     }
   }
+  return true
   //   console.log(char)
-  if (validity) return true;
-  else return false;
+  //   if (validity) return true;
+  //   else return false;
 }
 
 console.log(checkValidEmail("abc@xyz.com"));
