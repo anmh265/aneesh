@@ -1,19 +1,13 @@
-function findLongestWord(strList) {
-  let currStr = "";
-  let longestStr = "";
-
-  for (let i = 0; i <= strList.length; i++) {
-    if (strList[i] !== " " && i !== strList.length) {
-      currStr += strList[i];
-    } else {
-      if (longestStr.length < currStr.length) {
-        longestStr = currStr;
-      }
-      currStr = "";
+function missingNum(arr) {
+  for (let i = 0; i < arr.length - 2; i++) {
+    if (arr[i + 1] - arr[i] < arr[i + 2] - arr[i + 1]) {
+      return `Missing num is ${arr[i + 1] + (arr[i + 1] - arr[i])}`;
+    } else if (arr[i + 1] - arr[i] > arr[i + 2] - arr[i + 1]) {
+      return `Missing num is ${arr[i] + (arr[i + 2] - arr[i + 1])}`;
     }
   }
-
-  return longestStr;
+  return `Missing num is ${arr[0] - (arr[1] - arr[0])}`
 }
 
-console.log(findLongestWord("Hello world of programming"));
+let ans = missingNum([10, 11, 13, 14, 15])
+console.log(ans)
