@@ -1,14 +1,15 @@
 function letterFrequency(str) {
-  let obj = {};
+  let letterFreqObj = {};
+  str = str.toLowerCase()
 
   for (let i = 0; i < str.length; i++) {
-    if (obj[str[i]]) {
-      obj[str[i]] = obj[str[i]] + 1
+    if (letterFreqObj[str[i]]) {
+      letterFreqObj[str[i]] = letterFreqObj[str[i]] + 1
     } else {
-      obj[str[i]] = 1;
+      letterFreqObj[str[i]] = 1;
     }
   }
-  return obj
+  return letterFreqObj
 }
 
-console.log(letterFrequency('programming'))
+console.log(letterFrequency('apple'))
