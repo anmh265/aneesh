@@ -15,18 +15,20 @@ function checkValidEmail(mail) {
         return false;
       }
       for (let i = 0; i < mail.length - 4; i++) {
-            if (mail[i] === "@") {
-          if (mail[i - 1] === "." || mail[i + 1] === "." || (mail[i - 1] === '@' || mail[i + 1] === '@')) {
+        if (mail[i] === "@") {
+          if (
+            mail[i - 1] === "." ||
+            mail[i + 1] === "." ||
+            mail[i - 1] === "@" ||
+            mail[i + 1] === "@"
+          ) {
             return false;
           }
         }
       }
     }
   }
-  return true
-  //   console.log(char)
-  //   if (validity) return true;
-  //   else return false;
+  return true;
 }
 
 console.log(checkValidEmail("abc@xyz.com"));
