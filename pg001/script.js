@@ -11,7 +11,7 @@ function isPrime(num) {
       count++;
     }
   }
-  console.log(count, num)
+  console.log(count)
 
   if(count > 1){
     return `Not Prime`
