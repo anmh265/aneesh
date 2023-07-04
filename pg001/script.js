@@ -2,6 +2,7 @@ function isPrime(num) {
   let primeFound = true
   if(typeof num !== 'number') return false
   if(Math.round(num) !== num) return false
+  if(num < 2) return false
 
   for (let i = 2; i <= num / 2; i++) {
     if (num % i === 0) {
@@ -17,7 +18,7 @@ let testCase = [
   {value: 2, expected: true},
   {value: 5, expected: true},
   {value: 6, expected: false},
-  {value: 6.6, expected: true},
+  {value: 6.6, expected: false},
   {value: 6.0, expected: false},
   {value: 'hello', expected: false},
   {value: -2, expected: false},
