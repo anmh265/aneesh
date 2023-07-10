@@ -60,8 +60,3 @@ function testCase_findWordCount(tstCs) {
 }
 
 testCase_findWordCount(testCase);
-
-// "hello world" - 2;
-// "world" - 1;
-// "" - 0;
-// 1234 - -1;
