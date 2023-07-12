@@ -24,8 +24,8 @@ function testCase_returnEvenNumberList(tstCs) {
     console.log(`********For test case ${idx + 1}`);
     let got = returnEvenNumberList(tst.value);
 
-    for (let i = 0; i < got.length; i++) {
-      if (got.length && tst.value.length) {
+    for (let i = 0; i <= got.length; i++) {
+      if (got.length === tst.expected.length) {
         if (got[i] === tst.expected[i]) {
           console.log(
             `Test for ${i} passed, got: ${got}, expected: ${tst.expected}`
