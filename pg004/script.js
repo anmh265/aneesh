@@ -25,14 +25,32 @@ const testCases = [
   { value1: 2, value2: "2", expected: false },
 ];
 
+// function testCase_checkAnagram(tstCs) {
+//   tstCs.forEach((tst, idx) => {
+//     result = checkAnagram(tst.value1, tst.value2);
+//     // if (result === tst.expected) {
+//     //   console.log(
+//     //     `Test case ${idx} passed for values ${tst.value1} and ${tst.value2}, expected ${tst.expected}, got ${result}`
+//     //   );
+//     // } else {
+//     //   console.log(
+//     //     `Test case ${idx} failed for values ${tst.value1} and ${tst.value2}, expected ${tst.expected} got ${result}`
+//     //   );
+//     // }
+//   });
+// }
+
 function testCase_checkAnagram(tstCs) {
   tstCs.forEach((tst, idx) => {
     result = checkAnagram(tst.value1, tst.value2);
-    if (result === tst.expected) {
-      console.log(
-        `Test case ${idx} passed for values ${tst.value1} and ${tst.value2}, expected ${tst.expected}`
-      );
-    }
+
+    console.log(
+      `Test case ${idx} ${
+        result === tst.expected ? "passed" : "failed"
+      } for values ${tst.value1} and ${tst.value2}, expected ${
+        tst.expected
+      }, got ${result}`
+    );
   });
 }
 
