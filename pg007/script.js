@@ -4,8 +4,7 @@ function findLongestWord(strList) {
 
   if (typeof strList !== "string") return "";
 
-  for (let i = 0; i <= strList.length; i++) {
-    console.log(strList[i].charCodeAt(0));
+  for (let i = 0; i < strList.length; i++) {
     if (
       (strList[i].charCodeAt(0) < 65 && strList[i].charCodeAt(0) > 90) ||
       (strList[i].charCodeAt(0) < 97 && strList[i].charCodeAt(0) > 122)
@@ -28,8 +27,9 @@ function findLongestWord(strList) {
 
 const testcase = [
   { value: "Helo world", expected: "world" },
-  // { value: "", expected: "" },
-  // { value: 234, expected: "" },
+  { value: "", expected: "" },
+  { value: " Beautiful day ahead", expected: "Beautiful" },
+  { value: 234, expected: "" },
 ];
 
 function testCase_findLongestWord(tstCs) {
@@ -44,4 +44,4 @@ function testCase_findLongestWord(tstCs) {
 }
 
 // console.log(findLongestWord("Hello world of programming"));
-console.log(testCase_findLongestWord(testcase));
+testCase_findLongestWord(testcase);
