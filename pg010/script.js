@@ -31,5 +31,10 @@ function shortestWordLength(arr) {
   return shortest.length;
 }
 
+const testcase = [
+  { value: ["flower", "flow", "flight"], expected: "flo" },
+  { value: ["all", "alright", "alligator"], expected: "al" },
+];
+
 let ans = findLongestPrefix(["flower", "flow", "flight"]);
 console.log(ans);
