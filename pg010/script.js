@@ -1,5 +1,8 @@
 function findLongestPrefix(arr) {
   let commonChar = "";
+
+  if (!arr.length) return "";
+
   let len = shortestWordLength(arr);
   let i = 0;
   let j = 1;
@@ -28,13 +31,28 @@ function shortestWordLength(arr) {
       shortest = arr[i];
     }
   }
+
+  if (typeof shortest !== "object") return 0;
+
   return shortest.length;
 }
 
-const testcase = [
-  { value: ["flower", "flow", "flight"], expected: "flo" },
+const testCase = [
+  { value: ["flower", "flow", "flight"], expected: "fl" },
   { value: ["all", "alright", "alligator"], expected: "al" },
+  { value: [], expected: "" },
+  { value: [1, 3, 5, 6], expected: "" },
 ];
 
-let ans = findLongestPrefix(["flower", "flow", "flight"]);
-console.log(ans);
+function testCase_findLongestPrefix(tstCs) {
+  tstCs.forEach((tst, idx) => {
+    result = findLongestPrefix(tst.value);
+    console.log(
+      `Test for ${idx} ${
+        result === tst.expected ? "passed" : "failed"
+      }, expected: ${tst.expected}, result: ${result}`
+    );
+  });
+}
+
+testCase_findLongestPrefix(testCase);
