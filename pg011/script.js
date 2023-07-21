@@ -14,6 +14,8 @@ const testCases = [
   { value: 4, expected: true },
   { value: 9, expected: true },
   { value: 5, expected: false },
+  { value: 26, expected: false },
+  { value: 36, expected: true },
 ];
 
 function testCases_checkPerfectSquare(tstCs) {
