@@ -34,4 +34,22 @@ function maxProduct(arr) {
   return firstNum * secondNum * thirdNum;
 }
 
-console.log(maxProduct([-8, -6, -9, 6, 8, 7]));
+const testCases = [
+  { value: [4, 1, 3, 6], expected: 72 },
+  { value: [-6, 4, 3, -5, 2], expected: 120 },
+  { value: [-4, -2, -7, -3], expected: -24 },
+];
+
+function testCases_maxProduct(tstCs) {
+  tstCs.forEach((tst, idx) => {
+    result = maxProduct(tst.value);
+    console.log(
+      `Test for ${idx} ${
+        result === tst.expected ? "passed" : "failed"
+      }, expected: ${tst.expected} result: ${result}`
+    );
+  });
+}
+
+// console.log(maxProduct([-6, 4, 3, -5, 2]));
+testCases_maxProduct(testCases);
