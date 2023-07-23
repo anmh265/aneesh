@@ -38,6 +38,7 @@ const testCases = [
   { value: [4, 1, 3, 6], expected: 72 },
   { value: [-6, 4, 3, -5, 2], expected: 120 },
   { value: [-4, -2, -7, -3], expected: -24 },
+  { value: [2, 4, 9, -2, -1], expected: 72 },
 ];
 
 function testCases_maxProduct(tstCs) {
