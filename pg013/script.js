@@ -1,13 +1,36 @@
 function findlongestWord(arr) {
-  let longest = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (longest.length < arr[i].length) {
-      longest = arr[i];
+  const stringArr = returnStringList(arr);
+  if (!stringArr.length) return "";
+
+  let longestWord = stringArr[0];
+
+  for (let i = 1; i < stringArr.length; i++) {
+    if (longestWord.length < stringArr[i].length) {
+      longestWord = stringArr[i];
     }
   }
-  return longest;
+  return longestWord;
 }
 
-let inputArr = ["programming", "is", "fun"];
-let ans = findlongestWord(inputArr);
-console.log(ans);
+function returnStringList(arr) {
+  return arr.filter((item) => typeof item === "string");
+}
+
+const testCases = [
+  { value: ["programming", "is", "fun"], expected: "programming" },
+  { value: [], expected: "" },
+  { value: [1, 2, 4, 5], expected: "" },
+];
+
+const testCases_findLongestWord = (tstCs) => {
+  tstCs.forEach((tst, idx) => {
+    const result = findlongestWord(tst.value);
+    console.log(
+      `Test case ${idx} ${
+        result === tst.expected ? "passed" : "failed"
+      }, expected: ${tst.expected} result: ${result}`
+    );
+  });
+};
+
+testCases_findLongestWord(testCases);
