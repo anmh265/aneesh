@@ -20,6 +20,7 @@ const testCases = [
   { value: ["programming", "is", "fun"], expected: "programming" },
   { value: [], expected: "" },
   { value: [1, 2, 4, 5], expected: "" },
+  { value: ["apple", "banana", "orange"], expected: "banana" },
 ];
 
 const testCases_findLongestWord = (tstCs) => {
