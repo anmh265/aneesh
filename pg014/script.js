@@ -28,6 +28,7 @@ const testCase = [
   { value: "Hello", expected: false },
   { value: 123, expected: false },
   { value: "madaM", expected: true },
+  { value: "121", expected: true },
 ];
 
 function testCase_stringPalindrom(tstCs) {
