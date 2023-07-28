@@ -1,35 +1,8 @@
 function reverseString(strList) {
+  if (typeof strList !== "string") return "";
   let word = "";
   let wordArr = [];
   let reversedWordSentence = "";
-
-  // for (let i = 0; i < strList.length; i++) {
-  //   if((strList[i].charCodeAt(0) >= 65 && strList[i].charCodeAt(0) <= 122) && i !== strList.length){
-  //     word += strList[i];
-  //   }
-  //   else {
-  //     // wordArr.push(reverseWord(word))
-  //     // if(strList[i] === " " && i !== strList.length - 1){
-  //     //   wordArr.push(strList[i])
-  //     // }
-  //     // word = ''
-  //     wordArr.push(word)
-
-  //   }
-
-  //   // else if(strList[i] === " "){
-  //   //   console.log(word)
-  //   //   word = reverseWord(word) + " "
-  //   //   wordArr.push(word)
-  //   // }
-
-  //   // else if(strList[i] === " " || i !== strList.length){
-  //   //   console.log(word)
-  //   //   wordArr.push(reverseWord(word))
-  //   //   wordArr.push(' ')
-  //   // }
-  //   // console.log(wordArr)
-  // }
 
   for (let i = 0; i <= strList.length; i++) {
     if (strList[i] !== " " && i !== strList.length) {
@@ -61,5 +34,25 @@ function reverseWord(str) {
   return letter;
 }
 
-let ans = reverseString("Hello world");
-console.log(ans);
+const testCases = [
+  { value: "Programmers are awesome", expected: "sremmargorP era emosewa" },
+  { value: "Hello world", expected: "olleH dlrow" },
+  { value: 1234, expected: "" },
+  { value: "", expected: "" },
+];
+
+function testCases_reverseString(tstCs) {
+  tstCs.forEach((tst, idx) => {
+    const result = reverseString(tst.value);
+    console.log(
+      `Testcase for ${idx} ${
+        result === tst.expected ? "passed" : "failed"
+      }, expected: ${tst.expected}, result: ${result}`
+    );
+  });
+}
+
+// let ans = reverseString("Hello world");
+// console.log(ans);
+
+testCases_reverseString(testCases);
