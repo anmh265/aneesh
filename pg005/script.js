@@ -17,6 +17,7 @@ const testCases = [
   { value: "hello", expected: { h: 1, e: 1, l: 2, o: 1 } },
   { value: "World", expected: { W: 1, o: 1, r: 1, l: 1, d: 1 } },
   { value: 123, expected: {} },
+  { value: " ", expected: {} },
 ];
 
 function testCase_letterFrequency(tstCs) {
