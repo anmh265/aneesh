@@ -10,6 +10,7 @@ function letterFrequency(str) {
       letterFreqObj[str[i]] = 1;
     }
   }
+  console.log(letterFreqObj);
   return letterFreqObj;
 }
 
