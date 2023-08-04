@@ -20,6 +20,10 @@ const testCase = [
   },
   { value: [], expected: [] },
   { value: ["hello", "world"], expected: ["hello", "world"] },
+  {
+    value: ["open", "source", "programming", "is", "fun"],
+    expected: ["is", "fun", "open", "source", "programming"],
+  },
 ];
 
 function testCase_sortStringList(tstCs) {
@@ -45,4 +49,3 @@ function testCase_sortStringList(tstCs) {
 }
 
 testCase_sortStringList(testCase);
-// console.log(sortStringList(["cat", "dog", "elephant", "tiger"]));
