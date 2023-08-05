@@ -10,6 +10,7 @@ function sortStringList(arr) {
       }
     }
   }
+  console.log(arr);
   return arr;
 }
 
